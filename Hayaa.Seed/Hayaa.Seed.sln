@@ -5,6 +5,12 @@ VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hayaa.ProgrameSeed", "Hayaa.ProgrameSeed\Hayaa.ProgrameSeed.csproj", "{47EDD2BA-694C-472A-AEC8-BC1FCF429334}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hayaa.ISeedService", "Hayaa.ISeedService\Hayaa.ISeedService.csproj", "{34FBED51-6063-4970-BF5D-DFA1BA4D9D6E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{CFFB43E7-448B-4171-B74C-4B47F43FFF53}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{8208DC7C-733D-4074-81B5-63A7134D7F91}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,8 +21,16 @@ Global
 		{47EDD2BA-694C-472A-AEC8-BC1FCF429334}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47EDD2BA-694C-472A-AEC8-BC1FCF429334}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47EDD2BA-694C-472A-AEC8-BC1FCF429334}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34FBED51-6063-4970-BF5D-DFA1BA4D9D6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34FBED51-6063-4970-BF5D-DFA1BA4D9D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34FBED51-6063-4970-BF5D-DFA1BA4D9D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34FBED51-6063-4970-BF5D-DFA1BA4D9D6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{47EDD2BA-694C-472A-AEC8-BC1FCF429334} = {8208DC7C-733D-4074-81B5-63A7134D7F91}
+		{34FBED51-6063-4970-BF5D-DFA1BA4D9D6E} = {CFFB43E7-448B-4171-B74C-4B47F43FFF53}
 	EndGlobalSection
 EndGlobal
