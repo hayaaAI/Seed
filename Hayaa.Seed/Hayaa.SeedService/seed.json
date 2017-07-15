@@ -1,0 +1,12 @@
+{
+  "SeedServerUrl": "",
+  "LocalConfigDirectoryPath": "",
+  "IsVirtualPath": "",
+  "AppConfigSentinelUrl": "",
+  "TransfersSecurityKey": "",
+  "AppID": "",
+  "AppConfigID": "",
+  "AppConfigFileName": "app.json",
+  "Version": "",
+  "IsRemote": ""
+}

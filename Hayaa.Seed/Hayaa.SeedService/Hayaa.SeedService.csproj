@@ -5,11 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Hayaa.ISeedService\Hayaa.ISeedService.csproj" />
     <ProjectReference Include="..\Hayaa.ProgrameSeed_Standard\Hayaa.ProgrameSeed_Standard.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Model\" />
   </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="1.50.2" />
+    <PackageReference Include="MySql.Data" Version="8.0.8-dmr" />
+  </ItemGroup>
+
+  <ProjectExtensions><VisualStudio><UserProperties /></VisualStudio></ProjectExtensions>
 
 </Project>
