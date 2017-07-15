@@ -12,14 +12,14 @@ namespace Hayaa.ProgrameSeed.Model.Config
         {
             get
             {
-                return !((this.Workers == null) || (this.Workers.Count == 0));
+                return !((this.CompeontInstances == null) || (this.CompeontInstances.Count == 0));
             }
 
         }
         /// <summary>
-        /// 配置数据ID
+        /// 程序ID
         /// </summary>	
-        public int ID
+        public int AppID
         {
             get;
             set;
@@ -57,8 +57,14 @@ namespace Hayaa.ProgrameSeed.Model.Config
             get;
             set;
         }
+        /// <summary>
+        /// 组件配置
+        /// </summary>
         public List<ComponentConfig> Components { get; set; }
+        /// <summary>
+        /// 组件服务实例
+        /// </summary>
        
-        public List<ComponentService> Workers { get; set; }
+        public List<ComponentServiceInstance> CompeontInstances { get; set; }
     }
 }

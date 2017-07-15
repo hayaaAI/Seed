@@ -6,16 +6,9 @@ using System.Text;
 namespace Hayaa.ProgrameSeed.Model.Config
 {
     [Serializable]
-    public class ComponentService
+    public class ComponentServiceInstance
     {
-        /// <summary>
-        /// ID
-        /// </summary>	
-        public int ID
-        {
-            get;
-            set;
-        }
+       
         /// <summary>
         /// 解决方案ID
         /// </summary>	
@@ -85,7 +78,7 @@ namespace Hayaa.ProgrameSeed.Model.Config
         /// <summary>
         /// 接口名称
         /// </summary>
-        public string ComponentInterface
+        public List<string> ComponentInterface
         {
             get;
             set;
@@ -100,7 +93,7 @@ namespace Hayaa.ProgrameSeed.Model.Config
             set;
         }
         /// <summary>
-        /// 组建类型1是dll2是wcf
+        /// 组建类型1是文件2是服务
         /// </summary>
         public int ComponentType { get; set; }
         /// <summary>

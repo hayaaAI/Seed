@@ -13,11 +13,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WebSite", "WebSite", "{30AD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hayaa.ProgrameSeed_Standard", "Hayaa.ProgrameSeed_Standard\Hayaa.ProgrameSeed_Standard.csproj", "{A4C800C0-A357-4E1B-B2D7-D2F44C78B94A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hayaa.ISeedService", "Hayaa.ISeedService\Hayaa.ISeedService.csproj", "{5F86828F-E07C-420F-A103-7AEC10A0CF81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hayaa.ISeedService", "Hayaa.ISeedService\Hayaa.ISeedService.csproj", "{5F86828F-E07C-420F-A103-7AEC10A0CF81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hayaa.SeedService", "Hayaa.SeedService\Hayaa.SeedService.csproj", "{E46F446C-F635-47C1-811E-6E44D2F460C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hayaa.SeedService", "Hayaa.SeedService\Hayaa.SeedService.csproj", "{E46F446C-F635-47C1-811E-6E44D2F460C7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hayaa.SeedService.Web", "Hayaa.SeedService.Web\Hayaa.SeedService.Web.csproj", "{07BAF0E7-D9EC-4E46-A9A7-F3FB25DA57E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hayaa.SeedService.Web", "Hayaa.SeedService.Web\Hayaa.SeedService.Web.csproj", "{07BAF0E7-D9EC-4E46-A9A7-F3FB25DA57E4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTest", "UnitTest", "{E10CE77D-A2BB-4360-9368-5AEAE3A703D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

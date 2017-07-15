@@ -11,13 +11,13 @@ namespace Hayaa.ProgrameSeed.Util
         private static string GetMd5(string source)
         {
             source = string.Format("{0}{1}{2}", DateTime.Now.ToString("yyyyMMdd"), source, DateTime.Now.ToString("HH"));
-            MD5CryptoServiceProvider md5Hasher = new MD5CryptoServiceProvider();
-            byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(source));
+            //MD5CryptoServiceProvider md5Hasher = new MD5CryptoServiceProvider();
+            //byte[] data = md5Hasher.ComputeHash(Encoding.Default.GetBytes(source));
             StringBuilder sBuilder = new StringBuilder();
-            for (int i = 0; i < data.Length; i++)
-            {
-                sBuilder.Append(data[i].ToString("x2"));
-            }
+            //for (int i = 0; i < data.Length; i++)
+            //{
+            //    sBuilder.Append(data[i].ToString("x2"));
+            //}
             return sBuilder.ToString();
         }
         private static bool VerifyMd5(string source, string hash)

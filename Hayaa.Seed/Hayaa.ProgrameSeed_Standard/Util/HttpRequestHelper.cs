@@ -23,7 +23,7 @@ namespace Hayaa.ProgrameSeed.Util
         {
             if (!requestUrl.Contains("http"))
                 requestUrl = string.Format("http://{0}", requestUrl);
-            HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(requestUrl);
+            //HttpWebRequest req = (HttpWebRequest)HttpWebRequest.Create(requestUrl);
             Encoding encoding = Encoding.UTF8;
             StringBuilder param = new StringBuilder("&");
             if (urlParam != null)
@@ -35,22 +35,22 @@ namespace Hayaa.ProgrameSeed.Util
             }
             byte[] bs = Encoding.ASCII.GetBytes(param.ToString().TrimEnd('&'));
             string responseData = String.Empty;
-            req.Method = method;
-            req.ContentType = contentType;
-            req.ContentLength = bs.Length;
-            using (Stream reqStream = req.GetRequestStream())
-            {
-                reqStream.Write(bs, 0, bs.Length);
-                reqStream.Close();
-            }
-            using (HttpWebResponse response = (HttpWebResponse)req.GetResponse())
-            {
-                using (StreamReader reader = new StreamReader(response.GetResponseStream(), encoding))
-                {
-                    responseData = reader.ReadToEnd().ToString();
-                }
+            //req.Method = method;
+            //req.ContentType = contentType;
+            //req.ContentLength = bs.Length;
+            //using (Stream reqStream = req.GetRequestStream())
+            //{
+            //    reqStream.Write(bs, 0, bs.Length);
+            //    reqStream.Close();
+            //}
+            //using (HttpWebResponse response = (HttpWebResponse)req.GetResponse())
+            //{
+            //    using (StreamReader reader = new StreamReader(response.GetResponseStream(), encoding))
+            //    {
+            //        responseData = reader.ReadToEnd().ToString();
+            //    }
 
-            }
+            //}
             return responseData;
         }
     }

@@ -12,7 +12,7 @@ namespace Hayaa.ProgrameSeed
 {
     public class ProgramPlatformServiceFactory
     {
-        private Dictionary<int, Dictionary<string, ComponentService>> _serviceData;
+        private Dictionary<int, Dictionary<string, ComponentServiceInstance>> _serviceData;
         private ConcurrentDictionary<string, Assembly> _assembliesData;
         private static ProgramPlatformServiceFactory _instance = new ProgramPlatformServiceFactory();
 
@@ -23,11 +23,11 @@ namespace Hayaa.ProgrameSeed
         private ProgramPlatformServiceFactory()
         {
             _assembliesData = new ConcurrentDictionary<string, Assembly>();
-            _serviceData = new Dictionary<int, Dictionary<string, ComponentService>>();
+            _serviceData = new Dictionary<int, Dictionary<string, ComponentServiceInstance>>();
             InitData(ProgramDistributedConfig.Instance.GetComponentServices());
 
         }
-        private void InitData(List<ComponentService> appServiceConfigs)
+        private void InitData(List<ComponentServiceInstance> appServiceConfigs)
         {
             if (appServiceConfigs != null)
             {

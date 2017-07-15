@@ -2,6 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.6</TargetFramework>
+    <Company>Hayaa</Company>
+    <Product>Hayaa.ConfigurationProduction</Product>
   </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Hayaa.ProgrameSeed_Standard\Hayaa.ProgrameSeed_Standard.csproj" />
+  </ItemGroup>
 
 </Project>
