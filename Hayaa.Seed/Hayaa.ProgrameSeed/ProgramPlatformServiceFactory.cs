@@ -12,6 +12,9 @@ namespace Hayaa.ProgrameSeed
 {
     public class ProgramPlatformServiceFactory
     {
+        /// <summary>
+        /// 组建用户ID,【key：接口，value：接口实现类】
+        /// </summary>
         private Dictionary<int, Dictionary<string, ComponentServiceInstance>> _serviceData;
         private ConcurrentDictionary<string, Assembly> _assembliesData;
         private static ProgramPlatformServiceFactory _instance = new ProgramPlatformServiceFactory();
@@ -38,8 +41,14 @@ namespace Hayaa.ProgrameSeed
                     {
                         if (!_serviceData.ContainsKey(a))
                         {
-                            _serviceData.Add(a, null);
-                            _serviceData[a] = appServiceConfigs.FindAll(b => b.AppUserID == a).ToDictionary(c => c.ComponentInterface, c => c);
+                            _serviceData.Add(a, new Dictionary<string, ComponentServiceInstance>());
+                            var temp = appServiceConfigs.FindAll(b => b.AppUserID == a);
+                            //一个实现类可能基于多个接口，此种模式对于基于一个接口实现了多个组件，并且组建用户相同情况不支持
+                            temp.ForEach(c => {
+                                c.ComponentInterface.ForEach(ci => {
+                                    _serviceData[a].Add(ci, c);
+                                });
+                            });                            
                         }
                     });
                 }
