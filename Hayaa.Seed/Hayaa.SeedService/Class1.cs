@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Hayaa.ISeedService
+namespace Hayaa.SeedService
 {
     public class Class1
     {
