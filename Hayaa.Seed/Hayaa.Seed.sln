@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{CFFB43
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Client", "Client", "{8208DC7C-733D-4074-81B5-63A7134D7F91}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hayaa.ProgrameSeed_CoreVersion", "Hayaa.ProgrameSeed_CoreVersion\Hayaa.ProgrameSeed_CoreVersion.csproj", "{26D5D60C-CDB8-4A23-96D1-730815735F70}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{34FBED51-6063-4970-BF5D-DFA1BA4D9D6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34FBED51-6063-4970-BF5D-DFA1BA4D9D6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34FBED51-6063-4970-BF5D-DFA1BA4D9D6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26D5D60C-CDB8-4A23-96D1-730815735F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26D5D60C-CDB8-4A23-96D1-730815735F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26D5D60C-CDB8-4A23-96D1-730815735F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26D5D60C-CDB8-4A23-96D1-730815735F70}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{47EDD2BA-694C-472A-AEC8-BC1FCF429334} = {8208DC7C-733D-4074-81B5-63A7134D7F91}
 		{34FBED51-6063-4970-BF5D-DFA1BA4D9D6E} = {CFFB43E7-448B-4171-B74C-4B47F43FFF53}
+		{26D5D60C-CDB8-4A23-96D1-730815735F70} = {8208DC7C-733D-4074-81B5-63A7134D7F91}
 	EndGlobalSection
 EndGlobal
