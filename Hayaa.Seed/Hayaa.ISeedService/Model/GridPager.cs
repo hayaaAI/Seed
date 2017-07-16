@@ -12,5 +12,6 @@ namespace Hayaa.ISeedService.Model
         public List<T> Data { set; get; }
         public int PageSize { set; get; }
         public int PageIndex { set; get; }
+        public int Total { set; get; }
     }
 }

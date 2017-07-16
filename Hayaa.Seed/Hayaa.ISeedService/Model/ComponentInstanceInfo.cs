@@ -21,7 +21,7 @@ namespace Hayaa.ISeedService.Model
         /// <summary>
         /// 组件ID
         /// </summary>		
-        public int ComponetID
+        public int ComponentID
         {
             get;
             set;
