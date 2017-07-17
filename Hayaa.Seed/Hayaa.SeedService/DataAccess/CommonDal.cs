@@ -14,7 +14,7 @@ namespace Hayaa.SeedService.DataAccess
             IDbConnection conn = new MySqlConnection(AppConfigHelper.GetCon());
             return conn.Execute(sql, data);
         }
-        internal static int Excute(string sql, object parama)
+        internal static int Excute(string sql, object parama=null)
         {
             IDbConnection conn = new MySqlConnection(AppConfigHelper.GetCon());
             return conn.Execute(sql, parama);

@@ -10,7 +10,7 @@ namespace Hayaa.SeedService.DataAccess
     {      
         internal static int Add(ComponentInfo info)
         {
-            string sql = "insert (ComponentID,CompoentName,Title,Description,IsDelete,CreateBy,CreateTime,ModifyBy,ModifyTime,DeleteBy,DeleteTime) values(@ComponentID,@CompoentName,@Title,@Description,@IsDelete,@CreateBy,@CreateTime,@ModifyBy,@ModifyTime,@DeleteBy,@DeleteTime)";
+            string sql = "insert Component  (ComponentID,CompoentName,Title,Description,IsDelete,CreateBy,CreateTime,ModifyBy,ModifyTime,DeleteBy,DeleteTime) values(@ComponentID,@CompoentName,@Title,@Description,@IsDelete,@CreateBy,@CreateTime,@ModifyBy,@ModifyTime,@DeleteBy,@DeleteTime)";
             return Update<ComponentInfo>(sql, info) ;
         }
 		  internal static int update(ComponentInfo info)

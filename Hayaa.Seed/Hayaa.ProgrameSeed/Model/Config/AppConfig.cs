@@ -65,6 +65,6 @@ namespace Hayaa.ProgrameSeed.Model.Config
         /// 组件服务实例
         /// </summary>
        
-        public List<ComponentServiceInstance> CompeontInstances { get; set; }
+        public List<ComponentService> CompeontInstances { get; set; }
     }
 }

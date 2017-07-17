@@ -213,7 +213,7 @@ namespace Hayaa.ProgrameSeed
             //构造函数完成无null初始化设置
             return _appConfig.Components.Find(c => c.ComponentID == componetID);
         }
-        public List<ComponentServiceInstance> GetComponentServices()
+        public List<ComponentService> GetComponentServices()
         {
             return _appConfig.CompeontInstances;
         }

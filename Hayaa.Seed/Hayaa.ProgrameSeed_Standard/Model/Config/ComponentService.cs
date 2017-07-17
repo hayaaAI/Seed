@@ -11,19 +11,11 @@ namespace Hayaa.ProgrameSeed.Model.Config
         /// <summary>
         /// ID
         /// </summary>	
-        public int ID
+        public int ComponentInstanceID
         {
             get;
             set;
-        }
-        /// <summary>
-        /// 解决方案ID
-        /// </summary>	
-        public Guid SolutionID
-        {
-            get;
-            set;
-        }
+        }       
         /// <summary>
         /// 程序用户ID
         /// </summary>	
@@ -85,10 +77,21 @@ namespace Hayaa.ProgrameSeed.Model.Config
         /// <summary>
         /// 接口名称
         /// </summary>
-        public string ComponentInterface
+        public List<string> ComponentInterface
         {
-            get;
+            get {
+                if (!string.IsNullOrEmpty(this.ComponentInterfaces))
+                {
+                    return this.ComponentInterfaces.Split(',').ToList();
+                }
+                return new List<string>();
+            }
+           
+        }
+        public string ComponentInterfaces
+        {
             set;
+            get;
         }
         /// <summary>
         /// 程序集版本

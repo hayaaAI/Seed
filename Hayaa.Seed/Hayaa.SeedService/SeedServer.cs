@@ -8,7 +8,7 @@ using Hayaa.SeedService.DataAccess;
 
 namespace Hayaa.SeedService
 {
-    public class SeedServer : IAppService, IComponetService
+    public partial class SeedServer : IAppService, IComponetService
     {
         public Result DeleteApp(List<int> IDs)
         {
@@ -45,15 +45,24 @@ namespace Hayaa.SeedService
             else { id = AppConfigDal.update(info); if (id > 0) id = info.AppID; }
             return new DataResult<int>() { ActionResult = id > 0, Data = id };
         }
-
+        /// <summary>
+        /// 编辑程序组件实例与实例用户关系
+        /// </summary>
+        /// <param name="appConfigID"></param>
+        /// <param name="componentInstanceIDs"><key,value>【组件实例ID，实例用户ID】</param>
+        /// <returns></returns>
         public Result EditAppConfigComponentInstances(int appConfigID, Dictionary<int, int> componentInstanceIDs)
         {
-            throw new NotImplementedException();
+            return new Result() { ActionResult= Rel_AppConfig_ComponentInstanceDal.EditAppConfigComponentInstances(appConfigID, componentInstanceIDs)>0 };
         }
-
+        /// <summary>
+        /// 编辑程序组件配置信息关系
+        /// </summary>
+        /// <param name="appConfigID"></param>
+        /// <param name="componentConfigIDs"><key,value>【组件配置ID，配置的版本】</param>
         public Result EditAppConfigComponents(int appConfigID, Dictionary<int, int> componentConfigIDs)
         {
-            throw new NotImplementedException();
+            return new Result() { ActionResult = Rel_AppConfig_ComponentConfigDal.EditAppConfigComponents(appConfigID, componentConfigIDs) > 0 };
         }
 
         public DataResult<int> EditComponent(ComponentInfo info)
@@ -91,15 +100,25 @@ namespace Hayaa.SeedService
             var temp = AppConfigDal.Get(appConfigID);
             return new DataResult<AppConfigInfo>() { ActionResult = (temp != null), Data = temp };
         }
-
+        /// <summary>
+        /// 获取程序的组件实例与程序用户关系
+        /// </summary>
+        /// <param name="appConfigID"></param>
+        /// <returns><key,value>【组件实例ID，实例用户ID】</returns>
         public DataResult<Dictionary<int, int>> GetAppConfigComponentInstances(int appConfigID)
         {
-            throw new NotImplementedException();
+            Dictionary<int, int> temp = Rel_AppConfig_ComponentInstanceDal.GetAppConfigComponentInstances(appConfigID);
+            return new DataResult<Dictionary<int, int>>() { ActionResult = (temp != null), Data = temp };
         }
-
-        public DataResult<Dictionary<int, int>> GetAppConfigComponents(int appConfigID)
+        /// <summary>
+        /// 获取程序的组件的配置集合
+        /// </summary>
+        /// <param name="appConfigID"></param>
+        /// <returns><key,value>【组件配置ID，配置的版本】</returns>
+        public DataResult<Dictionary<int, int>> GetAppConfigComponentsConfig(int appConfigID)
         {
-            throw new NotImplementedException();
+            Dictionary<int, int> temp = Rel_AppConfig_ComponentConfigDal.GetAppConfigComponentsConfig(appConfigID);
+            return new DataResult<Dictionary<int, int>>() { ActionResult = (temp != null), Data = temp };
         }
 
         public GridPager<AppInfo> GetAppInfoPager(int pageSize, int pageIndex, string searchName)
@@ -143,7 +162,13 @@ namespace Hayaa.SeedService
 
         public AppConfig GetRemoteAppConfig(int appID, Guid appConfigID, int version = 0)
         {
-            throw new NotImplementedException();
+            var appConfig = AppConfigDal.Get(appID, appConfigID, version);
+            if (appConfig == null) return null;           
+            List<ComponentConfig> compoentConfigList = Rel_AppConfig_ComponentConfigDal.GetComponentsConfigList(appConfig.AppConfigID);
+            if (compoentConfigList==null) return null;
+            List<ComponentService> componentInstanceInfoList = Rel_AppConfig_ComponentInstanceDal.GetComponentInstanceList(appConfig.AppConfigID);
+            AppConfig r = new AppConfig() { Components = compoentConfigList, Workers = componentInstanceInfoList, ConfigContent = appConfig.ConfigContent, ID = appConfig.AppConfigID, SolutionID = appConfig.SolutionID, SolutionName = appConfig.Title, Version = appConfig.Version  };      
+            return r;
         }
     }
 }

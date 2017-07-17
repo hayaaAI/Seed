@@ -10,7 +10,7 @@ namespace Hayaa.SeedService.DataAccess
     {      
         internal static int Add(AppConfigInfo info)
         {
-            string sql = "insert (AppConfigID,AppID,SolutionID,ConfigContent,Version,Title,Description,IsDelete,CreateBy,CreateTime,ModifyBy,ModifyTime,DeleteBy,DeleteTime) values(@AppConfigID,@AppID,@SolutionID,@ConfigContent,@Version,@Title,@Description,@IsDelete,@CreateBy,@CreateTime,@ModifyBy,@ModifyTime,@DeleteBy,@DeleteTime)";
+            string sql = "insert AppConfig (AppConfigID,AppID,SolutionID,ConfigContent,Version,Title,Description,IsDelete,CreateBy,CreateTime,ModifyBy,ModifyTime,DeleteBy,DeleteTime) values(@AppConfigID,@AppID,@SolutionID,@ConfigContent,@Version,@Title,@Description,@IsDelete,@CreateBy,@CreateTime,@ModifyBy,@ModifyTime,@DeleteBy,@DeleteTime)";
             return Update<AppConfigInfo>(sql, info) ;
         }
 		  internal static int update(AppConfigInfo info)
@@ -37,6 +37,18 @@ namespace Hayaa.SeedService.DataAccess
         {
             string sql = "select SQL_CALC_FOUND_ROWS * from AppConfig where 1=1 limit (@pageIndex-1)*@pageSize,@pageIndex*@pageSize;select FOUND_ROWS();";
             return GetGridPager<AppConfigInfo>(sql,pageSize,pageIndex,new{pageSize=pageSize,pageIndex=pageIndex,searchKey=searcheKey}) ;
+        }
+        /// <summary>
+        /// 获取有效的AppConfig数据
+        /// </summary>
+        /// <param name="appID"></param>
+        /// <param name="appConfigID"></param>
+        /// <param name="version"></param>
+        /// <returns></returns>
+        internal static AppConfigInfo Get(int appID, Guid appConfigID, int version)
+        {
+            string sql = "select * from AppConfig  where AppID=@AppID and SolutionID=@AppConfigID and Version=@Version and IsDelete=0";
+            return Get<AppConfigInfo>(sql, new { AppID=appID,AppConfigID = appConfigID,Version=version });
         }
     }
 }

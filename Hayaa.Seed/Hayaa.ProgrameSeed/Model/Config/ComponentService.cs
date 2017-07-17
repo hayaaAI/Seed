@@ -6,17 +6,16 @@ using System.Text;
 namespace Hayaa.ProgrameSeed.Model.Config
 {
     [Serializable]
-    public class ComponentServiceInstance
+    public class ComponentService
     {
-       
         /// <summary>
-        /// 解决方案ID
+        /// ID
         /// </summary>	
-        public Guid SolutionID
+        public int ComponentInstanceID
         {
             get;
             set;
-        }
+        }       
         /// <summary>
         /// 程序用户ID
         /// </summary>	
@@ -80,8 +79,19 @@ namespace Hayaa.ProgrameSeed.Model.Config
         /// </summary>
         public List<string> ComponentInterface
         {
-            get;
+            get {
+                if (!string.IsNullOrEmpty(this.ComponentInterfaces))
+                {
+                    return this.ComponentInterfaces.Split(',').ToList();
+                }
+                return new List<string>();
+            }
+           
+        }
+        public string ComponentInterfaces
+        {
             set;
+            get;
         }
         /// <summary>
         /// 程序集版本
@@ -93,7 +103,7 @@ namespace Hayaa.ProgrameSeed.Model.Config
             set;
         }
         /// <summary>
-        /// 组建类型1是文件2是服务
+        /// 组建类型1是dll2是wcf
         /// </summary>
         public int ComponentType { get; set; }
         /// <summary>

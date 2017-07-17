@@ -10,7 +10,7 @@ namespace Hayaa.SeedService.DataAccess
     {      
         internal static int Add(ComponentInstanceInfo info)
         {
-            string sql = "insert (ComponentInstanceID,ComponetID,ComponentServiceCompeleteName,ComponentServiceName,ComponentAssemblyName,ComponentAssemblyFileName,ComponentAssemblyFileStorePath,ComponentInterface,ServiceUrl,AssemblyVersion,Title,Description,IsDelete,CreateBy,CreateTime,ModifyBy,ModifyTime,DeleteBy,DeleteTime) values(@ComponentInstanceID,@ComponetID,@ComponentServiceCompeleteName,@ComponentServiceName,@ComponentAssemblyName,@ComponentAssemblyFileName,@ComponentAssemblyFileStorePath,@ComponentInterface,@ServiceUrl,@AssemblyVersion,@Title,@Description,@IsDelete,@CreateBy,@CreateTime,@ModifyBy,@ModifyTime,@DeleteBy,@DeleteTime)";
+            string sql = "insert ComponentInstance  (ComponentInstanceID,ComponetID,ComponentServiceCompeleteName,ComponentServiceName,ComponentAssemblyName,ComponentAssemblyFileName,ComponentAssemblyFileStorePath,ComponentInterface,ServiceUrl,AssemblyVersion,Title,Description,IsDelete,CreateBy,CreateTime,ModifyBy,ModifyTime,DeleteBy,DeleteTime) values(@ComponentInstanceID,@ComponetID,@ComponentServiceCompeleteName,@ComponentServiceName,@ComponentAssemblyName,@ComponentAssemblyFileName,@ComponentAssemblyFileStorePath,@ComponentInterface,@ServiceUrl,@AssemblyVersion,@Title,@Description,@IsDelete,@CreateBy,@CreateTime,@ModifyBy,@ModifyTime,@DeleteBy,@DeleteTime)";
             return Update<ComponentInstanceInfo>(sql, info) ;
         }
 		  internal static int update(ComponentInstanceInfo info)

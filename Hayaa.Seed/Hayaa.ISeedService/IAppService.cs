@@ -46,7 +46,12 @@ namespace Hayaa.ISeedService
         /// <param name="componentConfigIDs"><key,value>【组件配置ID，配置的版本】</param>
         /// <returns></returns>
         Result EditAppConfigComponents(int appConfigID, Dictionary<int, int> componentConfigIDs);
-        DataResult<Dictionary<int, int>> GetAppConfigComponents(int appConfigID);
+        /// <summary>
+        /// 获取程序的组件的配置集合
+        /// </summary>
+        /// <param name="appConfigID"></param>
+        /// <returns><key,value>【组件配置ID，配置的版本】</returns>
+        DataResult<Dictionary<int, int>> GetAppConfigComponentsConfig(int appConfigID);
         /// <summary>
         /// 编辑程序组件实例与实例用户关系
         /// </summary>
@@ -54,6 +59,11 @@ namespace Hayaa.ISeedService
         /// <param name="componentInstanceIDs"><key,value>【组件实例ID，实例用户ID】</param>
         /// <returns></returns>
         Result EditAppConfigComponentInstances(int appConfigID, Dictionary<int,int> componentInstanceIDs);
+        /// <summary>
+        /// 获取程序的组件实例与程序用户关系
+        /// </summary>
+        /// <param name="appConfigID"></param>
+        /// <returns><key,value>【组件实例ID，实例用户ID】</returns>
         DataResult<Dictionary<int, int>> GetAppConfigComponentInstances(int appConfigID);
         /// <summary>
         /// 获取远程配置

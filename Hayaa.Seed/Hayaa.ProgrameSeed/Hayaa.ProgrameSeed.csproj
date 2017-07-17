@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Config\DefineTable.cs" />
+    <Compile Include="Model\Config\ComponentService.cs" />
     <Compile Include="Model\InstanceEnvironmentInfo.cs" />
     <Compile Include="Component\ProgramInstanceEnvironment.cs" />
     <Compile Include="Component\ProgramDistributedConfig.cs" />
@@ -53,7 +54,6 @@
     <Compile Include="ProgramSeed.cs" />
     <Compile Include="Model\Config\AppConfig.cs" />
     <Compile Include="Model\Config\ComponentConfig.cs" />
-    <Compile Include="Model\Config\ComponentServiceInstance.cs" />
     <Compile Include="Model\Config\SeedConfig.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Util\HttpRequestHelper.cs" />
