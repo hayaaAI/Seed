@@ -9,7 +9,7 @@
       "ID": 0,
       "ComponentConfigID": 1,
       "ComponentID": 1,
-      "Content": "{\"DatabaseConnection\":\"Data Source=192.168.31.37;Initial Catalog=websites;Persist Security Info=True;User ID=wind;password=123456\"}",
+      "Content": "{\"DatabaseConnection\":\"Data Source=192.168.31.252;Initial Catalog=RemoteConfig;Persist Security Info=True;User ID=root;password=123456\"}",
       "Version": 1,
       "ComponentConfigTitle": ""
     }
